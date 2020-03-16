@@ -1,0 +1,33 @@
+第一种类型如下：
+==========================================================================
+MyThings.ts
+export class SomeType { /* ... */ }
+export function someFunc() { /* ... */ }
+
+相反地，当导入的时候：
+明确地列出导入的名字
+Consumer.ts
+import { SomeType, someFunc } from "./MyThings";
+let x = new SomeType();
+let y = someFunc();
+
+/*************************************************************************/
+
+
+
+
+
+
+第二种类型如下：
+===========================================================================
+使用命名空间导入模式当你要导出大量内容的时候
+MyLargeModule.ts
+export class Dog { ... }
+export class Cat { ... }
+export class Tree { ... }
+export class Flower { ... }
+
+Consumer.ts
+import * as myLargeModule from "./MyLargeModule.ts";
+let x = new myLargeModule.Dog();
+/*************************************************************************/
